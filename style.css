@@ -104,9 +104,12 @@ main{
     align-items: center;
     padding-inline-end: 4rem;
     padding-block: 3rem;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 868% 64%;
 }
 picture{
-    overflow: hidden;
+    position: relative;
 }
 
 .question{
@@ -145,12 +148,12 @@ picture::before{
     display: block;
     background: url(./images/illustration-woman-online-desktop.svg) no-repeat;
     aspect-ratio: 1;
-    background-position: -80px center;
+    background-position: 100% center;
 }
 img{
     position: absolute;
-    bottom: 280px;
-    left: 88px;
+    bottom: 57px;
+    left: -93px;
 }
 
 h1{
@@ -167,4 +170,44 @@ h1{
 }
 .question:hover h3:not(.bold){
     color: var(--hover-text);
+}
+.mobile-only{
+    display: none;
+}
+
+@media (max-width:900px){
+    main{
+        display: flex;
+        background-image: url(./images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: 75%;
+        background-position: 50% 0%;
+        padding: 2rem;
+        padding-block-start: 10rem;
+        position: relative;
+        flex-direction: column;
+        margin: 2rem;
+        gap: 1rem;
+        max-width: 23rem;
+    }
+    h1 {
+        text-align: center;
+    }
+    picture{
+        position: unset;
+    }
+    picture:before {
+        display: none;
+    }
+    img{
+        display: none;
+        position: static;
+    }
+    .mobile-only{
+        display: block;
+        position: absolute;
+        top: -20.5%;
+        left: 13%;
+        width: 75%;
+    }
 }
